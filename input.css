@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body{
+        font-family: 'Oxygen', sans-serif;
+    }
+}
+
+@layer components{
+    .container{
+        @apply max-w-[1240px]
+    }
+}
+
+
+/* <----------------------- Burger menu setup -----------------------> */
+
+.lb{
+    font-family: 'Libre Baskerville', serif;
+}
+
+.webpseudo{
+    position: relative;
+}
+
+.webpseudo::before{
+    content: '';
+    position: absolute;
+    width: 38px;
+    height: 1px;
+    background-color: black;
+    color: black;
+    left: 110%;
+    top: 50%;
+}
+
+
+.toggle-btn{
+    position: static;
+    margin-right: 50px;
+    z-index: 1;
+}
+
+.logo{
+    margin-top: 10px;
+    position: static;
+    margin-left: 10px;
+    z-index: 1;
+}
+
+.toggle-btn:hover{
+    cursor: pointer;
+}
+
+span.one{
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background: rgb(0, 0, 0);
+}
+
+span.two{
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background: rgb(0, 0, 0);
+    margin-top: 12px;
+}
+
+.menu{
+    z-index: 0;
+    position: absolute;
+    background: #333333;
+    height: 100vh;
+    width: 100%;
+    top: -120%;
+}
+
+.data{
+    padding: 8em 0 0 2em;
+    text-align: left;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 60px;
+}
+
+.list-title{
+    color: gray;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 24px;
+}
+
+.li{
+    margin-top: 1em;
+}
+
+.list-link{
+    position: absolute;
+    color: #EFEEE8;
+    font-size: 42px;
+    text-decoration: none;
+    font-family: 'Libre Baskerville', serif;
+}
+
+
+.list-link::after{
+    content: "";
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    width: 100%;
+    transform: scale(0);
+    transition: all .3s ease-in-out;
+    background: #EFEEE8;
+    border-radius: 4px;
+}
+
+.list-link:hover::after {
+    transform: scale(1);
+}
+
+@media screen and (max-width:480px) {
+    .list-link{
+        font-size: 21px;
+    }
+
+    .list-title{
+        font-size: 18px;
+    }
+
+    .webpseudo::before{
+        display: none;
+    }
+
+    
+}
+
+.second-section{
+    margin: 100px 0;
+    max-width: 100%;
+}
+
+.cont-img{
+    padding: 24px 24px 32px 24px;
+    background-color: #E4E2D3;
+}
+
+.form-group {
+    margin-bottom: 20px; 
+    position: relative;
+}
+.form-group:last-child{
+    margin-bottom: 0px;
+}
+.f-inputbox,
+.f-textbox{
+  padding: 22px 20px 10px 20px;
+   border: none;
+   border-bottom: 2px solid #c2c2c2;
+   background-color: transparent;
+   width: 100%;
+   font-size: 18px;
+   line-height: 26px;
+   position: relative;
+   z-index: 2;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+ }
+.f-textbox{
+    resize: none;
+}
+.f-label{
+   font-size: 18px;
+   line-height: 26px;
+    position: absolute;
+    top: 24px;
+    left: 20px;
+    z-index: 1;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+}
+.form-group input.f-inputbox:focus + label,
+.f-label.f-up{
+  top: 0px;
+  left: 2px;
+  font-size: 14px;
+  line-height: 20px;
+
+}
+.f-inputbox:focus,
+.f-textbox:focus{
+    border-bottom: 2px solid #c2c2c2;
+    box-shadow: none; -webkit-box-shadow: none;
+}
+
+input {outline:none;}
